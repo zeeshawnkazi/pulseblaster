@@ -1,5 +1,6 @@
 *.pyc
-src/pulseblaster.egg-info/*
 build/*
 dist/*
 *.ipynb
+*__pycache__/*
+*.egg-info/*

@@ -1,8 +1,9 @@
-# example: pulse blaster pin held on indefinitely
+# example: pulse blaster pin cycles high / low indefinitely
+
 from pulseblaster.PBInd import PBInd
 import pulseblaster.spinapi
 
-cycle_length = 1e3 * pulseblaster.spinapi.ns  # ns
+cycle_length = 10 * pulseblaster.spinapi.us  # micro seconds
 hardware_pins = [23] # using pin 23 (AOM modulation)
 delays = []          # delays for each individual channel
 N=float('inf')       # number of loops (N = float('inf') to repeat indefinitely
@@ -29,7 +30,7 @@ pb.spinapi.pb_reset()
 
 #program hardware_pins to be on from t0=0 to tend=cycle_length
 pb.spinapi.pb_start_programming(0)
-pb.on(hardware_pins[0],0,cycle_length)
+pb.on(hardware_pins[0],0,cycle_length//2)
 pb.program(delays,N)
 pb.spinapi.pb_stop_programming()
 

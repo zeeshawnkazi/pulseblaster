@@ -4,9 +4,9 @@ import re
 from setuptools import setup, find_namespace_packages
 
 package_name = 'pulseblaster'
-package_source = 'src'
+package_source = '.'
 
-VERSIONFILE=f'{package_source}/__version__.py'
+VERSIONFILE=f'{package_name}/__version__.py'
 verstrline = open(VERSIONFILE, 'rt').read()
 VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
 mo = re.search(VSRE, verstrline, re.M)
